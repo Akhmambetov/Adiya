@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ❤️ HERO SECTION */
+
+.hero {
+    height: 100vh;
+    background: #f6dce3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Заголовок */
+
+.hero h1 {
+    font-size: 110px;
+    font-weight: 600;
+    text-align: center;
+    color: #f47a98;
+    line-height: 1.1;
+    margin-bottom: 60px;
+}
+
+/* Ссылка */
+
+.envelope {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Коробка конверта */
+
+.envelope-box {
+    width: 280px;
+    height: 170px;
+    background: #f2a9b7;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: 0.4s;
+}
+
+/* Верхний треугольник */
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background: #e796a8;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Сердце */
+
+.heart {
+    position: absolute;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    z-index: 2;
+}
+
+/* Hover эффект */
+
+.envelope-box:hover {
+    transform: scale(1.07);
+}
+
+/* Click text */
+
+.click-text {
+    margin-top: 15px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #f28ca3;
+}
+
+/* ❤️ MEMORIES */
+
+.memories {
+    padding: 100px 0;
+    background: #fff5f8;
+    text-align: center;
+}
+
+.memories h2 {
+    font-size: 40px;
+    margin-bottom: 60px;
+    color: #ff5c8a;
+}
+
+.memory-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.memory {
+    width: 300px;
+}
+
+.memory img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.memory p {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* ❤️ SONG */
+
+.song {
+    padding: 100px 0;
+    text-align: center;
+    background: #e8f0ff;
+}
+
+.song h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #5a87ff;
+}
+
+/* ❤️ LETTER */
+
+.letter-section {
+    padding: 100px 0;
+    background: #fdecef;
+    display: flex;
+    justify-content: center;
+}
+
+.letter-box {
+    background: #fff;
+    padding: 50px;
+    width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.letter-box h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    color: #ff5c8a;
+    margin-bottom: 30px;
+}
+
+.letter-box p {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #444;
+}
+
+.question {
+    margin-top: 40px;
+    color: #ff3366;
+}
