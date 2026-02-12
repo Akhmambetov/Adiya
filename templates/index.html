@@ -5,31 +5,19 @@
     <title>Happy Valentine's</title>
     <link rel="stylesheet" href="../static/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 
 <audio id="background-music" loop>
     <source src="../static/Cigarettes_After_Sex_-_Sweet_(mp3.pm).mp3" type="audio/mpeg">
 </audio>
 
-<script>
-    const music = document.getElementById("background-music");
-
-    document.addEventListener("click", function startMusic() {
-        music.play().catch(() => {});
-        document.removeEventListener("click", startMusic);
-    });
-
-    document.querySelector(".spotify-wrapper").addEventListener("mouseenter", function() {
-        music.pause();
-    });
-</script>
-
 <body>
 
 <section class="hero">
     <h1>
         Happy <br>
-        Valentine's
+        Valentine's Honey!
     </h1>
 
     <a href="#memories" class="envelope">
@@ -46,26 +34,32 @@
     <h2>Our Memories</h2>
 
     <div class="memory-container">
-        <div class="memory">
+
+        <div class="memory polaroid">
+            <div class="tape"></div>
             <img src="../static/images/photo_2026-01-24_01-58-03.jpg" alt="">
             <p>Our very first meeting and first photo. I love remembering that day so much</p>
         </div>
 
-        <div class="memory">
+        <div class="memory polaroid">
+            <div class="tape"></div>
             <img src="../static/images/photo_2026-01-24_02-04-51.jpg" alt="">
             <p>Just the two of us in Alau. We're terribly fed up with photographers ahahah</p>
         </div>
 
-        <div class="memory">
+        <div class="memory polaroid">
+            <div class="tape"></div>
             <img src="../static/images/photo_2026-02-11_10-15-42.jpg" alt="">
             <p>Every time I watch a movie with you, it feels like I'm immersed in their world with you</p>
         </div>
+
     </div>
 </section>
 
 <!-- ❤️ SECTION 3: SONG -->
 <section class="song">
-    <h2>Song For You</h2>
+    <h2>Song For You <br>
+    I repeatedly listen to this song and think about u</h2>
 
     <div class="spotify-wrapper">
         <iframe
@@ -84,28 +78,68 @@
 
 <!-- ❤️ SECTION 4: LETTER -->
 <section class="letter-section">
-    <div class="letter-box">
-        <h3>Dear Adiya...</h3>
 
-        <p>
-            I didn't even notice how it happened.
-            Love for you came unexpectedly, quietly, without warning
-            and suddenly became the most important thing in my life.
-        </p>
+    <h2 class="letter-title">A Letter From My Heart</h2>
+    <div class="letter-container">
 
-        <p>
-            Now I can't imagine my days without you.
-            You are my warmth, my peace — the person without whom I cannot live.
-            Without you, everything seems empty.
-        </p>
+        <div class="big-envelope" id="openEnvelope">
+            <div class="big-back"></div>
+            <div class="big-left"></div>
+            <div class="big-right"></div>
+            <div class="big-flap"></div>
+            <div class="big-heart">❤️</div>
+        </div>
 
-        <p>
-            And since fate brought me together so unexpectedly...
-        </p>
+        <div class="hidden-letter" id="letterContent">
+            <h3>Dear Adiya...</h3>
 
-        <h2 class="question">Will you be my valentine? ❤️</h2>
+            <p>
+                I didn't even notice how it happened.
+                Love for you came unexpectedly, quietly, without warning
+                and suddenly became the most important thing in my life.
+            </p>
+
+            <p>
+                Now I can't imagine my days without you.
+                You are my warmth, my peace — the person without whom I cannot live.
+                Without you, everything seems empty.
+            </p>
+
+            <p>
+                And since fate brought me together so unexpectedly...
+            </p>
+
+            <h2 class="question">Will you be my valentine? ❤️</h2>
+        </div>
+
     </div>
 </section>
 
+
 </body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const music = document.getElementById("background-music");
+    const spotifyWrapper = document.querySelector(".spotify-wrapper");
+    const envelope = document.getElementById("openEnvelope");
+    const letterContainer = document.querySelector(".letter-container");
+
+    document.addEventListener("click", function startMusic() {
+        music.play().catch(() => {});
+        document.removeEventListener("click", startMusic);
+    });
+
+    spotifyWrapper.addEventListener("mouseenter", function() {
+        music.pause();
+    });
+
+    envelope.addEventListener("click", function() {
+        letterContainer.classList.toggle("open");
+    });
+});
+</script>
+
+
 </html>

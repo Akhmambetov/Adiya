@@ -149,12 +149,12 @@ html {
 }
 
 /* ❤️ LETTER */
-
 .letter-section {
-    padding: 100px 0;
+    padding: 200px 0;
     background: #fdecef;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* ВАЖНО */
+    align-items: center;     /* центр по горизонтали */
 }
 
 .letter-box {
@@ -182,4 +182,251 @@ html {
 .question {
     margin-top: 40px;
     color: #ff3366;
+}
+
+/* ❤️ POLAROID STYLE */
+
+.memory-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.polaroid {
+    background: white;
+    padding: 20px 20px 40px 20px;
+    width: 280px;
+    border-radius: 8px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Небольшой хаотичный наклон */
+.polaroid:nth-child(1) {
+    transform: rotate(-4deg);
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-2deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 2;
+}
+
+.polaroid img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.polaroid p {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+    color: #444;
+}
+
+/* ❤️ Скотч */
+
+.tape {
+    width: 90px;
+    height: 25px;
+    background: rgba(255, 220, 160, 0.7);
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+/* ❤️ LETTER SECTION */
+
+.letter-section {
+    padding: 200px 0;
+    background: #fdecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-container {
+    position: relative;
+    text-align: center;
+}
+
+/* Конверт */
+
+.big-envelope {
+    width: 420px;
+    height: 260px;
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    z-index: 10;
+}
+
+/* Основа */
+
+.big-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f2a9b7;
+    border-radius: 16px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+}
+
+/* Боковые части */
+
+.big-left,
+.big-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    background: #e796a8;
+}
+
+.big-left {
+    left: 0;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.big-right {
+    right: 0;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+}
+
+/* Крышка */
+
+.big-flap {
+    position: absolute;
+    width: 100%;
+    height: 130px;
+    top: 0;
+    background: #f08da1;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    transform-origin: top;
+    transition: transform 1s ease;
+    z-index: 20;
+}
+
+/* Сердце */
+
+.big-heart {
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    z-index: 30;
+    transition: 0.6s ease;
+}
+
+/* Письмо */
+
+.hidden-letter {
+    width: 650px;
+    background: #fffdfb;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, 150px);
+    opacity: 0;
+    transition: all 1s ease;
+    z-index: 1;
+}
+
+/* Заголовок */
+
+.hidden-letter h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    color: #d85c7a;
+    margin-bottom: 25px;
+}
+
+/* Основной текст */
+
+.hidden-letter p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 22px;
+}
+
+/* Вопрос */
+
+.question {
+    margin-top: 35px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: #ff4f79;
+}
+
+/* OPEN */
+
+.letter-container.open .hidden-letter {
+    opacity: 1;
+    transform: translate(-50%, -220px);
+    z-index: 50; /* теперь выше конверта */
+}
+
+.hidden-letter {
+    background: linear-gradient(#fffdfb, #fff6f8);
+}
+
+.hidden-letter {
+    border: 1px solid #f3d6dd;
+}
+
+
+.letter-container.open .big-heart {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+}
+
+.letter-container.open .hidden-letter {
+    opacity: 1;
+    transform: translate(-50%, -220px);
+}
+
+.big-flap {
+    z-index: 30;
+}
+
+.big-envelope {
+    z-index: 20;
+}
+
+/* ❤️ LETTER TITLE */
+
+.letter-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 48px;
+    color: #d85c7a;
+    margin-bottom: 60px;
+    text-align: center;
+}
+/* декоративная линия под заголовком */
+
+.letter-title::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: #f2a9b7;
+    margin: 15px auto 0;
+    border-radius: 10px;
 }
